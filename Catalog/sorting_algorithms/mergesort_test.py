@@ -16,13 +16,13 @@ if merge_sort:
     if len(functions) < 2:
         merge_sort = False
 
+aux_structure = False
+
 if merge_sort:
     arguments = functions[0].args.args
     args_names = [a.arg for a in arguments]
 
     assign_entities = python_dw.get_entities_by_type("assign")
-
-    aux_structure = False
 
     for e in assign_entities:
         body = e.get_body()
