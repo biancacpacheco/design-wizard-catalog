@@ -1,7 +1,7 @@
 from api.design_wizard import PythonDW
 
 python_dw = PythonDW()
-python_dw.parse("tests/data/mergesort.py")
+python_dw.parse("path/to/script.py")
 python_dw.design_populate_all_entities()
 
 merge_sort = True
@@ -32,12 +32,7 @@ if merge_sort:
 
         elif python_dw.verify_instance(body, "binop"):
             targets = e.ast_node.targets 
-            if python_dw.verify_instance(body.left,"list"):
-                for t in targets:
-                    if t.id not in args_names:
-                        aux_structure = True
-                        break
-            if ((not aux_structure) and (python_dw.verify_instance(body.left,"list"))):
+            if python_dw.verify_instance(body.left,"list") or (python_dw.verify_instance(body.right,"list")):
                 for t in targets:
                     if t.id not in args_names:
                         aux_structure = True

@@ -1,7 +1,7 @@
 from api.design_wizard import PythonDW
 
 python_dw = PythonDW()
-python_dw.parse("tests/data/quicksort.py")
+python_dw.parse("path/to/script.py")
 python_dw.design_populate_all_entities()
 
 quick_sort = True

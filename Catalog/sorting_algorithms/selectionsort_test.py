@@ -3,6 +3,7 @@ from api.design_wizard import PythonDW
 python_dw = PythonDW()
 python_dw.parse("path/to/script.py")
 python_dw.design_populate_all_entities()
+
 function_names = python_dw.get_all_functions()
 
 args = function_names[0].args.args
@@ -29,6 +30,5 @@ if len(for_entities) == 2:
                         if t.id not in args_names:
                             aux_variable = True
 
-bubble_sort_structure = nestled_fors and not aux_variable
+print(nestled_fors and aux_variable)
 
-print(bubble_sort_structure)
