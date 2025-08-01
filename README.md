@@ -1,5 +1,5 @@
-# Design Wizard Catalog
-Design Wizard Catalog is a repository containing a set of design tests for introductory programming courses. Alongside each design test there is a description of the test, motivation for it's creation and examples of accepted and declined code for that test. 
+# Design Tests Catalog
+The Design Tests Catalog is a repository of design assessments for introductory programming courses. Each test includes a description, the rationale behind its creation, and examples of both accepted and rejected code submissions.
 
 # Methodology
 This repository contains a set of tests for statically analysis of python code using the [Python Design Wizard Tool](https://github.com/Caio-Batista/python-dw?tab=readme-ov-file).
