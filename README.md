@@ -2,10 +2,9 @@
 The Design Tests Catalog is a repository of design assessments for introductory programming courses. Each test includes a description, the rationale behind its creation, and examples of both accepted and rejected code submissions.
 
 # Methodology
-This repository contains a set of tests for statically analysis of python code using the [Python Design Wizard Tool](https://github.com/Caio-Batista/python-dw?tab=readme-ov-file).
-These tests were written after the manual analysis of x introductory programming courses distributed in y Brazilian Universities. Most of the courses are part of these universities Computer Science programs, but there were also equivalent courses on other engineering programs  that were also analyzed for this catalog.
+This repository contains a collection of design tests for Python code, designed to be used with the Python Design Wizard tool. These tests were created based on a manual review of introductory programming courses from 22 different courses across 5 Brazilian universities. While most of the courses belong to Computer Science programs, we also included equivalent courses from various engineering programs in our analysis.
 
-The test scripts listed in this catalog can also be found in within the /Catalog directory in this repository, in the subdirectiories equivalent to the section's names of the catalog presented below.
+The test scripts included in this catalog can be found in the /Catalog directory of this repository, organized into subdirectories that correspond to the section titles of the catalog outlined below.
 
 # Table of Tests
 - [Sorting Algorithms](#sorting-algorithms)
