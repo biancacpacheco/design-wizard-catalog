@@ -6,6 +6,22 @@ This repository contains a collection of design tests for Python code, designed 
 
 The test scripts included in this catalog can be found in the /Catalog directory of this repository, organized into subdirectories that correspond to the section titles of the catalog outlined below.
 
+# How to Execute
+Place the /Catalog directory in the root of your python-dw clone
+```
+.
+|_api
+|_Catalog
+```
+
+You can then execute any test with the command:
+```bash
+python3 -m catalog.topic_name.test_name path/to/file.py
+```
+for example, to run the bubble sort test:
+```bash
+python3 -m catalog.sorting_algorithms.bubblesort_test tests/data/bubblesort.py
+```
 # Table of Tests
 - [Sorting Algorithms](#sorting-algorithms)
     - [Bubble Sort](#bubble-sort)
@@ -43,10 +59,17 @@ This section contains scripts to statically analyze sorting algorithm implementa
 Description: This is the script that tests if an implementation of a bubblesort is following it's expected structure with two nestled 'for' loops and no auxiliary variables:
 
 ``` python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 function_names = python_dw.get_all_functions()
@@ -110,10 +133,17 @@ def selection_sort(array, size):
 Description: This is the script that tests if an implementation of a insertion sort is following it's expected structure with a 'while' loop nestled within a 'for' loop:
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 for_entities = python_dw.get_entities_by_type('for')
@@ -159,10 +189,17 @@ def bubble_sort(arr):
 Description: The following script tests if an implementation of a Merge Sort algorithm follows it's expected structure: with the creation of an auxiliary function, use of auxiliary lists and also usage of two or three 'while' loops:  
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 merge_sort = True
@@ -274,10 +311,17 @@ def quickSort(array, low, high):
 Description: This test verifies if an implementation of a Quick Sort algorithm follows the structure expected: using one 'for' loop, implementing an auxiliary function, and not using any auxiliary lists.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 quick_sort = True
@@ -396,10 +440,17 @@ def mergeSort(arr, l, r):
 Description: This test checks if the implementation of the Selection Sort algorithm fits the expected two nestled 'for' loops along with the usage of an auxiliary variable.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 function_names = python_dw.get_all_functions()
@@ -462,10 +513,17 @@ def bubble_sort(arr):
 Description: The following test checks the implementation of the Counting Sort algorithm, ensuring it uses three non-nestled 'for' loops and two auxiliary arrays
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 for_entities = python_dw.get_entities_by_type("for")
@@ -587,10 +645,17 @@ This section contains scripts to statically analyze search algorithms
 Description: The following test checks if a linear search algorithm was implemented using a 'for' loop and no auxiliary variables
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 for_usage = len(python_dw.get_entities_by_type("for")) == 1
@@ -654,10 +719,17 @@ def binary_search(list, target):
 Description: This test verifies if the implementation of a binary search follows the expected structure, using one 'while' loop and three auxiliary variables representing the start, middle and end index of the list being verified.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 while_usage = len(python_dw.get_entities_by_type("while")) == 1
@@ -729,10 +801,17 @@ This section contains tests to verify if a student is not using prohibited funct
 Description: The following script checks if an implementation does not use any prohibited functions (i.e: ```sort()```, ```split()```, ```union()```, ```intersection()```, etc.). It can be personalized according to a course's needs.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 prohibited_functions = ["sort", "split", "issubset", "issuperset", "union", "intersection", "difference", "join", "symmetric_difference"] 
@@ -772,10 +851,17 @@ def insertion_sort(arr):
 Description: The following script checks if there is no usage of prohibited data structures (such as a 'dictionary' ou a 'set')
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 prohibited_structures = ["dict", "set"]
@@ -833,10 +919,17 @@ In this section, we gathered tests that ensure an student is using pre-determine
 Description: This test verifies that a code exclusively uses 'for' loops
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 for_usage = len(python_dw.get_entities_by_type("for")) > 0 
@@ -877,10 +970,17 @@ def insertion_sort(arr):
 Description: This test verifies that a code exclusively uses 'while' loops
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 for_usage = len(python_dw.get_entities_by_type("for")) > 0 
@@ -928,10 +1028,17 @@ def insertion_sort(arr):
 Description: This test ensures that a code uses conditionals ('if' statements)
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 conditionals = len(python_dw.get_entities_by_type("if")) > 0 
@@ -960,10 +1067,17 @@ def func(a,b):
 Description: This test verifies that an implementation uses and/or manipulates lists.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 list_usage = False
@@ -1025,10 +1139,17 @@ def func(input_str):
 Description: This test ensures that the student defines (self made) functions in the implementation
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 defined_functions = len(python_dw.get_all_functions()) > 0
@@ -1062,10 +1183,17 @@ else:
 Description: The following code verifies if a script implements more than one function for solving the problem.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 aux_function = len(python_dw.get_all_functions()) >= 2
@@ -1109,10 +1237,17 @@ def bubble_sort(arr):
 Description: Similarly to the previous one, this test verifies the existence of auxiliary lists in an implementation. It checks for assign nodes that include a list or operation using lists with a different name from the ones listed as arguments of the function.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 assign_entities = python_dw.get_entities_by_type("assign")
@@ -1187,10 +1322,17 @@ def insertion_sort(arr):
 Description: Like the last two tests, this one verifies if an implementation uses or not auxiliary variables by checking the assign nodes and verifying variables not listed in the arguments of the function
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 assign_entities = python_dw.get_entities_by_type("assign")
@@ -1249,10 +1391,17 @@ def bubble_sort(arr):
 Description: This test ensures that the student uses pre-estabilished functions (i.e: ```range()```)
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 necessary_elements = ["range", "for"]
@@ -1292,10 +1441,17 @@ The main goal of the tests in this section is to verify bad smells that could be
 Description: This test verifies if the number of arguments in each function declared does not exceed a number - which can be adapted to it's context.
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 functions= python_dw.get_all_functions()
@@ -1339,10 +1495,17 @@ def sum_of_five(a,b,c,d,e):
 Description: This tests ensures that the student is not overusing 'return' statements in the implementation 
 
 ```python
+import sys
 from api.design_wizard import PythonDW
 
+if len(sys.argv) != 2:
+    print("Usage: python3 script.py path/to/file.py")
+    sys.exit(1)
+
+script_path = sys.argv[1]
+
 python_dw = PythonDW()
-python_dw.parse("path/to/script.py")
+python_dw.parse(script_path)
 python_dw.design_populate_all_entities()
 
 acceptable_number_of_returns = len(python_dw.get_entities_by_type("return")) <= 3
