@@ -886,9 +886,9 @@ python_dw.design_populate_all_entities()
 for_usage = len(python_dw.get_entities_by_type("for")) > 0 
 while_usage = len(python_dw.get_entities_by_type("while")) > 0
 
-exclusively_for = for_usage and not while_usage
+exclusively_while = not for_usage and while_usage
 
-print(exclusively_for)
+print(exclusively_while)
 ```
 the script bellow is accepted, as it only uses 'while' loops:
 
