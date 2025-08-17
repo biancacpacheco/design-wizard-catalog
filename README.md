@@ -4,10 +4,10 @@ The Design Tests Catalog is a repository of design assessments for introductory 
 # Methodology
 This repository contains a collection of design tests for Python code, designed to be used with the Python Design Wizard tool. These tests were created based on a manual review of introductory programming courses from 22 different courses across 5 Brazilian universities. While most of the courses belong to Computer Science programs, we also included equivalent courses from various engineering programs in our analysis.
 
-The test scripts included in this catalog can be found in the /Catalog directory of this repository, organized into subdirectories that correspond to the section titles of the catalog outlined below.
+The test scripts included in this catalog can be found in the /catalog directory of this repository, organized into subdirectories that correspond to the section titles of the catalog outlined below.
 
 # How to Execute
-Place the /Catalog directory in the root of your python-dw clone
+Place the /catalog directory in the root of your python-dw clone
 ```
 .
 |_api
